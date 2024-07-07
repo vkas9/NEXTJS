@@ -1,7 +1,7 @@
-const  User=()=>{
+const  Login=()=>{
     return <>
     
         <h1>Hello Ji</h1>
     </>
 }
-export default User;
+export default Login;

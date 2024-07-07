@@ -3,18 +3,17 @@ import mongoose,{Document, Model, Schema} from "mongoose"
 
 
 export interface IUser extends Document{
-    name:string;
+    username:string;
     email:string;
     password:string;
-    about:string;
-    profileURL:string;
+  
     createdAt: Date;
     updatedAt: Date;
 
 }
 
 const userSchema=new Schema<IUser>({
-    name:{
+    username:{
         type:String,
         required:true,
         trim:true,
@@ -32,9 +31,7 @@ const userSchema=new Schema<IUser>({
         type:String,
         required:true,
         trim:true,
-    },
-    about:{type:String,lowercase:true},
-    profileURL:{type:String,lowercase:true}
+    }
 
 },{timestamps:true})
 const UserModel:Model<IUser>=mongoose.models.User || mongoose.model<IUser>("User", userSchema);
